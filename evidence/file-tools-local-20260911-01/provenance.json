@@ -1,0 +1,13 @@
+{
+  "finished_at": "2026-09-11T16:49:01.883477+00:00",
+  "versions": {},
+  "fixture_sha256": {
+    "reads.sam": "8ec8271ee5c4b2f64e4b7e229193bc1fd8ac47cd500f3bd5bdb5fcf20b1fe74b",
+    "reference.fa": "1dccc292e6af7bd3349e464a5ca62077410d6795517e4b2958ece869cbdd1969",
+    "valid.vcf": "3c8c525635ead94e5480cd5bebae8d40e0f27fba25f134404a608527b8437182",
+    "wrong-ref.vcf": "4d7bcf6c54850340e739972eebdeb53a8e86225065f7a586cbfee36527b309c5"
+  },
+  "script_sha256": "3f07abc9646d56ab3939e28c9107d540a9dce8e704b4649691cea85565b0e993",
+  "input_directory": "file-tools-local-20260911-01-inputs",
+  "limits": "Tiny authored SAM/VCF fixtures; no variant caller or alignment algorithm was evaluated. quickcheck alone does not detect every internal corruption."
+}

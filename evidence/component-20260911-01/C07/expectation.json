@@ -1,0 +1,7 @@
+{
+  "id": "C07",
+  "recipe": "missing_column",
+  "n_reads": 100,
+  "requirement": "COMP-06",
+  "error_contains": "Usecols do not match columns"
+}

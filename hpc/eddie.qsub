@@ -1,0 +1,14 @@
+#!/bin/bash
+#$ -N aav_verify
+#$ -cwd
+#$ -S /bin/bash
+#$ -pe sharedmem 16
+#$ -l h_vmem=4G
+#$ -l h_rt=04:00:00
+#$ -j y
+
+set -euo pipefail
+[[ -f workflow.lock.json ]] || { echo 'Submit from the project root.' >&2; exit 1; }
+[[ "${NSLOTS:-0}" -eq 16 ]] || { echo 'This config expects 16 allocated slots.' >&2; exit 1; }
+source hpc/site-setup.sh
+python3 run_workflow.py --case "${AAV_CASE:-baseline}"

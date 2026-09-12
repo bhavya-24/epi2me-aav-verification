@@ -1,0 +1,29 @@
+{
+  "id": "C06",
+  "recipe": "baseline",
+  "n_reads": 100,
+  "sample_id": "SYNTHETIC_B",
+  "requirement": "COMP-05",
+  "expected": {
+    "Transgene": [
+      80,
+      84.21
+    ],
+    "Helper": [
+      10,
+      10.53
+    ],
+    "Host": [
+      5,
+      5.26
+    ],
+    "Mapped": [
+      95,
+      95
+    ],
+    "Unmapped": [
+      5,
+      5
+    ]
+  }
+}

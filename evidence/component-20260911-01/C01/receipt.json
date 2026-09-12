@@ -1,0 +1,33 @@
+{
+  "argv": [
+    "<PROJECT_ROOT>\\.venv\\Scripts\\python.exe",
+    "-B",
+    "<PROJECT_ROOT>\\component_entry.py",
+    "contamination",
+    "--bam_info",
+    "<PROJECT_ROOT>\\evidence\\component-20260911-01\\C01\\inputs\\alignments.tsv",
+    "--sample_id",
+    "SYNTHETIC_A",
+    "--transgene_fasta",
+    "<PROJECT_ROOT>\\evidence\\component-20260911-01\\C01\\inputs\\transgene.fasta",
+    "--ref_ids",
+    "<PROJECT_ROOT>\\evidence\\component-20260911-01\\C01\\inputs\\reference_ids.json",
+    "--n_reads",
+    "100",
+    "--contam_class_counts",
+    "<PROJECT_ROOT>\\evidence\\component-20260911-01\\C01\\output.tsv"
+  ],
+  "input_sha256": {
+    "alignments.tsv": "593b8c72b8614dc588f17483956a591d9a2e143821be2d79b3776dc7e6e2380b",
+    "reference_ids.json": "2fb5afd3eb86795b3d4e8381b1b0e04e27c38af309e36bef71ebb1e3a8949646",
+    "transgene.fasta": "7f7f1e7dd88edfec6b41740c5413f420d4b4b08f38c4e115f8203088289c87bb"
+  },
+  "started_at": "2026-09-11T16:44:22.059280+00:00",
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "[17:44:22 - workflow_glue] Bootstrapping CLI.\n[17:44:24 - workflow_glue] Starting entrypoint.\n<PROJECT_ROOT>\\upstream\\bin\\workflow_glue\\contamination.py:87: SettingWithCopyWarning: \nA value is trying to be set on a copy of a slice from a DataFrame.\nTry using .loc[row_indexer,col_indexer] = value instead\n\nSee the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy\n  df_lengths['sample_id'] = args.sample_id\n",
+  "finished_at": "2026-09-11T16:44:24.425669+00:00",
+  "status": "PASS",
+  "detail": "Exact categories/counts, expected percentages and sample identity confirmed",
+  "output_sha256": "f4bc4e562f4baaf2ae0e4fb0c569158316af0e04e43f565b7ee2030681f61c24"
+}

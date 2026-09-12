@@ -1,0 +1,16 @@
+{
+  "source_archive_sha256": "7a62b511c2cfaece8a64312858ae60200354c3d55f9329a21031d279d81c1d53",
+  "files": {
+    "transgene.fasta": "c18b4f2a85c3c2b32a0d7a4b1fe50c95f6179efd8b582ba303f377110cafeb50",
+    "helper.fasta": "ade9cea13f54f098e93f39d14614821214aca7dfefa47574fe30b0595b03ff98",
+    "repcap.fasta": "fb9c531a8366fc9c91f32f7fbcbdc63988cff6cb167b0296ac93c3bc89909b87",
+    "cell_line.fasta.gz": "137e84359bc5805bdc7446d0059bdfdf823e4549ed85243563a7f58a601f371b",
+    "fastq/sample_1/simulated_reads.fq": "6e1cc0fbe4851ddf3d90211363e57c4eaff217a307c79846a9e57ca4d24c331f",
+    "fastq/sample_2/simulated_reads.fq": "2e734ec7d31d1bb7808738f8fc5cd2dae16bbb2e83364c7db1965d2e9e98f1c2"
+  },
+  "samples": [
+    "sample_1",
+    "sample_2"
+  ],
+  "data_type": "upstream simulated demonstration reads"
+}

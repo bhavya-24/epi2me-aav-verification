@@ -1,0 +1,18 @@
+{
+  "scope": "Synthetic alignment summaries; no sequencing or alignment has been performed",
+  "oracle": "Expected values declared before execution; arithmetic explained in docs/component-test-plan.md",
+  "cases": [
+    {"id":"C01","recipe":"baseline","n_reads":100,"requirement":"COMP-01","expected":{"Transgene":[80,84.21],"Helper":[10,10.53],"Host":[5,5.26],"Mapped":[95,95],"Unmapped":[5,5]}},
+    {"id":"C02","recipe":"duplicate_alignment","n_reads":100,"requirement":"COMP-02","expected":{"Transgene":[81,84.38],"Helper":[10,10.42],"Host":[5,5.21],"Mapped":[95,95],"Unmapped":[5,5]}},
+    {"id":"C03","recipe":"reversed","n_reads":100,"requirement":"COMP-03","expected":{"Transgene":[80,84.21],"Helper":[10,10.53],"Host":[5,5.26],"Mapped":[95,95],"Unmapped":[5,5]}},
+    {"id":"C04","recipe":"all_mapped","n_reads":5,"requirement":"COMP-01","expected":{"Transgene":[2,40],"Helper":[1,20],"Host":[1,20],"RepCap":[1,20],"Mapped":[5,100],"Unmapped":[0,0]}},
+    {"id":"C05","recipe":"transgene_only","n_reads":2,"requirement":"COMP-04","expected":{"Transgene":[2,100],"Mapped":[2,100],"Unmapped":[0,0]}},
+    {"id":"C06","recipe":"baseline","n_reads":100,"sample_id":"SYNTHETIC_B","requirement":"COMP-05","expected":{"Transgene":[80,84.21],"Helper":[10,10.53],"Host":[5,5.26],"Mapped":[95,95],"Unmapped":[5,5]}},
+    {"id":"C07","recipe":"missing_column","n_reads":100,"requirement":"COMP-06","error_contains":"Usecols do not match columns"},
+    {"id":"C08","recipe":"missing_fasta","n_reads":100,"requirement":"COMP-06","error_contains":"missing.fasta"},
+    {"id":"X01","recipe":"empty","n_reads":10,"requirement":"EXP-01","explore":"All reads unmapped: inspect whether an empty alignment table produces a useful result or diagnostic."},
+    {"id":"X02","recipe":"baseline","n_reads":0,"requirement":"EXP-01","explore":"Zero total input reads: inspect the diagnostic; no upstream invalid-input contract asserted."},
+    {"id":"X03","recipe":"baseline","n_reads":94,"requirement":"EXP-02","explore":"Total input count below unique mapped count: inspect whether impossible percentages are rejected."},
+    {"id":"X04","recipe":"unknown_reference","n_reads":101,"requirement":"EXP-03","explore":"A mapped reference absent from the category metadata: inspect category coverage and denominator."}
+  ]
+}

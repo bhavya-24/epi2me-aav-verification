@@ -1,0 +1,17 @@
+{
+  "repository": "https://github.com/epi2me-labs/wf-aav-qc",
+  "revision": "43a4266fc30a131c9e2b49654a97a3fd59e41d94",
+  "purpose": "Unmodified upstream snapshots, including the subset executed by the component tests; upstream licence included",
+  "files": {
+    "LICENSE": "86fcfd4be39f2a49527074a3808b2e4cb78a4e2104d2a1f5951bdded2eb4729d",
+    "main.nf": "7592dc4c754edf38321408ccd7581079f1e42ef1cc2009811084280008cee147",
+    "nextflow.config": "1c2c9e6103a79807634ed7153716a2c1e57d77f878fb8fbf9a63ccca09fe93a4",
+    "nextflow_schema.json": "a061f74c45c66b03aac33098063fc3b58194a2259f832917dd7aa35eaef9eb89",
+    "output_definition.json": "abd51ba1e027e010412e5d41e3f5ff2cf0b374007d9188265f3c33b9f20c3290",
+    "bin/workflow_glue/aav_structures.py": "9f523ee40326b989d9f8b661b4f73726eb51ef2344dd431a378cf926eb6d7549",
+    "bin/workflow_glue/report.py": "b7c4b46681d2e2214deddb9e68c52880d67667a92126994ca43c00c95f680dbf",
+    "bin/workflow_glue/__init__.py": "d5b4f04ce848e5d65dca383ccbe989753bbbadf2c12aefdde4903680e4e318a1",
+    "bin/workflow_glue/util.py": "3468f0f89d22b4f5a58734fb6aa4666f1f6a659ee2799e19fe2981da3e4e57db",
+    "bin/workflow_glue/contamination.py": "54250d4ecb908f588f2ef021d9f9ae4f04451e0dd8d39e67acf325adb50ef490"
+  }
+}

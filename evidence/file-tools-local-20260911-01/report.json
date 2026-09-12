@@ -1,0 +1,19 @@
+{
+  "created_at": "2026-09-11T16:49:01.881676+00:00",
+  "scope": "SYNTHETIC FILE-TOOL EXERCISE; not EPI2ME-generated BAM/VCF",
+  "all_checks_passed": false,
+  "checks": [
+    {
+      "id": "BAM-TOOLS",
+      "requirement": "FILE-01",
+      "status": "BLOCKED",
+      "detail": "samtools executable unavailable"
+    },
+    {
+      "id": "VCF-TOOLS",
+      "requirement": "FILE-02",
+      "status": "BLOCKED",
+      "detail": "bcftools executable unavailable"
+    }
+  ]
+}

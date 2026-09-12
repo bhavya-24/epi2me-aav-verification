@@ -1,0 +1,9 @@
+hpc/eddie.qsub: exit 0
+
+hpc/site-setup.sh: exit 0
+
+scripts/prepare-runtime.sh: exit 0
+
+scripts/samtools: exit 0
+
+scripts/bcftools: exit 0

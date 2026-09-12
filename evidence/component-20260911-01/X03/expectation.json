@@ -1,0 +1,7 @@
+{
+  "id": "X03",
+  "recipe": "baseline",
+  "n_reads": 94,
+  "requirement": "EXP-02",
+  "explore": "Total input count below unique mapped count: inspect whether impossible percentages are rejected."
+}

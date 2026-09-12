@@ -1,0 +1,7 @@
+{
+  "id": "C08",
+  "recipe": "missing_fasta",
+  "n_reads": 100,
+  "requirement": "COMP-06",
+  "error_contains": "missing.fasta"
+}

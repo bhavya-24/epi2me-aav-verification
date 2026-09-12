@@ -1,0 +1,14 @@
+data/
+cache/
+work/
+runs/
+.nextflow*/
+.nextflow.log*
+__pycache__/
+*.pyc
+hpc/site-setup.local.sh
+*.o[0-9]*
+*.e[0-9]*
+.venv/
+hpc/file-tools.local.sh
+tmp/

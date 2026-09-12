@@ -1,0 +1,28 @@
+{
+  "id": "C02",
+  "recipe": "duplicate_alignment",
+  "n_reads": 100,
+  "requirement": "COMP-02",
+  "expected": {
+    "Transgene": [
+      81,
+      84.38
+    ],
+    "Helper": [
+      10,
+      10.42
+    ],
+    "Host": [
+      5,
+      5.21
+    ],
+    "Mapped": [
+      95,
+      95
+    ],
+    "Unmapped": [
+      5,
+      5
+    ]
+  }
+}

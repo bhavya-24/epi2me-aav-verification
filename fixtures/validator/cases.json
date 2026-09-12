@@ -1,0 +1,25 @@
+{
+  "scope":"Four-line Phred+33 FASTQ dialect accepted by this project; A/C/G/T/N bases only. Unit = one file, positive = malformed. Authored challenge cases, not a held-out population sample.",
+  "cases":[
+    {"id":"V01","label":"negative","reason":"Ordinary record","content":"@a\nACGT\n+\nIIII\n"},
+    {"id":"V02","label":"negative","reason":"Lowercase bases and N","content":"@a\nacgtn\n+\nIIIII\n"},
+    {"id":"V03","label":"negative","reason":"Lowest allowed Phred+33 character","content":"@a\nAC\n+\n!!\n"},
+    {"id":"V04","label":"negative","reason":"Highest allowed Phred+33 character","content":"@a\nAC\n+\n~~\n"},
+    {"id":"V05","label":"negative","reason":"Repeated matching identifier and description","content":"@a description\nAC\n+a description\nII\n"},
+    {"id":"V06","label":"negative","reason":"Two distinct reads","content":"@a\nAC\n+\nII\n@b\nGT\n+\nII\n"},
+    {"id":"V07","label":"negative","reason":"CRLF line endings","content":"@a\r\nAC\r\n+\r\nII\r\n"},
+    {"id":"V08","label":"negative","reason":"Gzip-compressed record","gzip":true,"content":"@a\nACGT\n+\nIIII\n"},
+    {"id":"I01","label":"positive","reason":"Header lacks @","content":"a\nAC\n+\nII\n"},
+    {"id":"I02","label":"positive","reason":"Empty identifier","content":"@\nAC\n+\nII\n"},
+    {"id":"I03","label":"positive","reason":"Invalid q in sequence","content":"@a\nAq\n+\nII\n"},
+    {"id":"I04","label":"positive","reason":"Missing plus marker","content":"@a\nAC\n-\nII\n"},
+    {"id":"I05","label":"positive","reason":"Quality shorter than sequence","content":"@a\nAC\n+\nI\n"},
+    {"id":"I06","label":"positive","reason":"Quality longer than sequence","content":"@a\nAC\n+\nIII\n"},
+    {"id":"I07","label":"positive","reason":"Truncated final record","content":"@a\nAC\n+\n"},
+    {"id":"I08","label":"positive","reason":"Duplicate read identifier","content":"@a\nAC\n+\nII\n@a\nGT\n+\nII\n"},
+    {"id":"I09","label":"positive","reason":"Mismatched repeated identifier","content":"@a\nAC\n+b\nII\n"},
+    {"id":"I10","label":"positive","reason":"Quality contains ASCII 32","content":"@a\nAC\n+\nI \n"},
+    {"id":"I11","label":"positive","reason":"Quality contains ASCII 127","content":"@a\nAC\n+\nI\u007f\n"},
+    {"id":"I12","label":"positive","reason":"Empty file","content":""}
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/epi2me-labs/wf-aav-qc",
+  "release": "v1.3.1",
+  "revision": "43a4266fc30a131c9e2b49654a97a3fd59e41d94",
+  "checked_at": "2026-09-09",
+  "demo_url": "https://ont-exd-int-s3-euwst1-epi2me-labs.s3.amazonaws.com/wf-aav-qc/wf-aav-qc-demo.tar.gz",
+  "demo_sha256": "7a62b511c2cfaece8a64312858ae60200354c3d55f9329a21031d279d81c1d53",
+  "demo_description": "Public upstream demonstration containing simulated reads; not patient data or an experimental clinical validation cohort.",
+  "containers": {
+    "aav": "docker://ontresearch/wf-aav-qc:shacb89a8b188048347596ad46a23455f035fc67752",
+    "common": "docker://ontresearch/wf-common:shafdd79f8e4a6faad77513c36f623693977b92b08e",
+    "medaka": "docker://ontresearch/medaka:shacf8338462607b17b1d68dbce212cb93daea50bad"
+  }
+}

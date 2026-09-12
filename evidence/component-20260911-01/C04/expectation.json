@@ -1,0 +1,32 @@
+{
+  "id": "C04",
+  "recipe": "all_mapped",
+  "n_reads": 5,
+  "requirement": "COMP-01",
+  "expected": {
+    "Transgene": [
+      2,
+      40
+    ],
+    "Helper": [
+      1,
+      20
+    ],
+    "Host": [
+      1,
+      20
+    ],
+    "RepCap": [
+      1,
+      20
+    ],
+    "Mapped": [
+      5,
+      100
+    ],
+    "Unmapped": [
+      0,
+      0
+    ]
+  }
+}

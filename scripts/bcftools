@@ -1,0 +1,4 @@
+#!/bin/bash
+set -euo pipefail
+: "${AAV_PROJECT_ROOT:?Source hpc/site-setup.sh from the project root}"
+exec singularity exec --bind "$AAV_PROJECT_ROOT:$AAV_PROJECT_ROOT" "$AAV_PROJECT_ROOT/cache/containers/aav.sif" bcftools "$@"

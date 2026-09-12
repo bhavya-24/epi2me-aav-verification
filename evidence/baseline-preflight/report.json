@@ -1,0 +1,55 @@
+{
+  "created_at": "2026-09-09T19:33:36.312234+00:00",
+  "scope": "INPUT CHECKS ONLY - no EPI2ME execution",
+  "all_checks_passed": true,
+  "checks": [
+    {
+      "id": "IN-01",
+      "requirement": "REQ-01",
+      "status": "PASS",
+      "detail": "All six selected input files match the prepared SHA256 manifest"
+    },
+    {
+      "id": "IN-02:sample_1",
+      "requirement": "REQ-02",
+      "status": "PASS",
+      "detail": "10439 unique valid reads"
+    },
+    {
+      "id": "IN-02:sample_2",
+      "requirement": "REQ-02",
+      "status": "PASS",
+      "detail": "10440 unique valid reads"
+    },
+    {
+      "id": "IN-03:transgene.fasta",
+      "requirement": "REQ-03",
+      "status": "PASS",
+      "detail": "1 nonempty reference sequences"
+    },
+    {
+      "id": "IN-03:helper.fasta",
+      "requirement": "REQ-03",
+      "status": "PASS",
+      "detail": "1 nonempty reference sequences"
+    },
+    {
+      "id": "IN-03:repcap.fasta",
+      "requirement": "REQ-03",
+      "status": "PASS",
+      "detail": "1 nonempty reference sequences"
+    },
+    {
+      "id": "IN-03:cell_line.fasta.gz",
+      "requirement": "REQ-03",
+      "status": "PASS",
+      "detail": "1 nonempty reference sequences"
+    },
+    {
+      "id": "IN-04",
+      "requirement": "REQ-03",
+      "status": "PASS",
+      "detail": "Reviewed demo coordinates fit; reference identifiers are unique. Coordinate convention inherited from upstream demo."
+    }
+  ]
+}

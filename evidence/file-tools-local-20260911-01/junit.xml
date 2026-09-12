@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="SYNTHETIC FILE-TOOL EXERCISE; not EPI2ME-generated BAM/VCF" tests="2" failures="0" skipped="2"><testcase name="BAM-TOOLS" classname="FILE-01"><skipped message="BLOCKED">samtools executable unavailable</skipped><system-out>samtools executable unavailable</system-out></testcase><testcase name="VCF-TOOLS" classname="FILE-02"><skipped message="BLOCKED">bcftools executable unavailable</skipped><system-out>bcftools executable unavailable</system-out></testcase></testsuite>

@@ -1,0 +1,7 @@
+Reference	Number of alignments	Percentage of alignments	sample_id
+Transgene	2.0	40.0	SYNTHETIC_A
+Helper	1.0	20.0	SYNTHETIC_A
+Host	1.0	20.0	SYNTHETIC_A
+RepCap	1.0	20.0	SYNTHETIC_A
+Unmapped	0.0	0.0	SYNTHETIC_A
+Mapped	5.0	100.0	SYNTHETIC_A

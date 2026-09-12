@@ -1,0 +1,23 @@
+#!/bin/bash
+#$ -N aav_file_checks
+#$ -cwd
+#$ -S /bin/bash
+#$ -l h_vmem=4G
+#$ -l h_rt=00:15:00
+#$ -j y
+set -euo pipefail
+set +u
+if [[ -f /etc/profile.d/modules.sh ]]; then
+    source /etc/profile.d/modules.sh
+fi
+module load python/3.12.9
+if [[ -x cache/file-tools-env/bin/samtools && -x cache/file-tools-env/bin/bcftools ]]; then
+    export PATH="$PWD/cache/file-tools-env/bin:$PATH"
+elif [[ -f hpc/file-tools.local.sh ]]; then
+    source hpc/file-tools.local.sh
+else
+    echo 'First run python3 scripts/setup-file-tools.py in an allocated interactive session.' >&2
+    exit 2
+fi
+set -u
+python3 run_file_checks.py --report "evidence/file-tools-job-${JOB_ID}"

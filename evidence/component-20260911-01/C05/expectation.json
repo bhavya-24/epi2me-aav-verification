@@ -1,0 +1,20 @@
+{
+  "id": "C05",
+  "recipe": "transgene_only",
+  "n_reads": 2,
+  "requirement": "COMP-04",
+  "expected": {
+    "Transgene": [
+      2,
+      100
+    ],
+    "Mapped": [
+      2,
+      100
+    ],
+    "Unmapped": [
+      0,
+      0
+    ]
+  }
+}

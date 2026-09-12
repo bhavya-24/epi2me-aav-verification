@@ -1,0 +1,25 @@
+test_abstentions_are_reported_with_coverage (test_verification.VerificationTests.test_abstentions_are_reported_with_coverage) ... ok
+test_archive_checksum_must_match (test_verification.VerificationTests.test_archive_checksum_must_match) ... ok
+test_bad_bases_quality_and_plus_rejected (test_verification.VerificationTests.test_bad_bases_quality_and_plus_rejected) ... ok
+test_bad_fasta (test_verification.VerificationTests.test_bad_fasta) ... ok
+test_duplicate_ids_rejected (test_verification.VerificationTests.test_duplicate_ids_rejected) ... ok
+test_duplicate_labels_rejected (test_verification.VerificationTests.test_duplicate_labels_rejected) ... ok
+test_foreign_read_in_structure_table_rejected (test_verification.VerificationTests.test_foreign_read_in_structure_table_rejected) ... ok
+test_manifest_missing_or_corrupt_is_a_failed_check (test_verification.VerificationTests.test_manifest_missing_or_corrupt_is_a_failed_check) ... ok
+test_metrics_against_hand_calculated_confusion_matrix (test_verification.VerificationTests.test_metrics_against_hand_calculated_confusion_matrix) ... ok
+test_missing_prediction_rejected (test_verification.VerificationTests.test_missing_prediction_rejected) ... ok
+test_missing_structure_header_rejected (test_verification.VerificationTests.test_missing_structure_header_rejected) ... ok
+test_missing_tool_is_blocked_not_passed (test_verification.VerificationTests.test_missing_tool_is_blocked_not_passed) ... ok
+test_multiline_fasta (test_verification.VerificationTests.test_multiline_fasta) ... ok
+test_nonzero_tool_exit_retained (test_verification.VerificationTests.test_nonzero_tool_exit_retained) ... ok
+test_quarantine_preserves_original_and_tracks_derivation (test_verification.VerificationTests.test_quarantine_preserves_original_and_tracks_derivation) ... ok
+test_report_does_not_turn_skipped_into_success (test_verification.VerificationTests.test_report_does_not_turn_skipped_into_success) ... ok
+test_structure_table_is_subset_not_all_input (test_verification.VerificationTests.test_structure_table_is_subset_not_all_input) ... ok
+test_truncated_fastq_rejected (test_verification.VerificationTests.test_truncated_fastq_rejected) ... ok
+test_undefined_metric_is_null (test_verification.VerificationTests.test_undefined_metric_is_null) ... ok
+test_valid_fastq_and_gzip (test_verification.VerificationTests.test_valid_fastq_and_gzip) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.168s
+
+OK

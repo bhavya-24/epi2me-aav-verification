@@ -1,0 +1,29 @@
+name: EPI2ME component and file-tool verification
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  component:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements-component.txt
+      - run: python scripts/setup-component.py
+      - run: python -B -m unittest discover -s tests -v
+      - run: python run_component.py --report evidence/ci-component
+      - run: python run_validator_benchmark.py --report evidence/ci-validator
+      - if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y samtools bcftools
+      - if: runner.os == 'Linux'
+        run: python run_file_checks.py --report evidence/ci-file-tools
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verification-${{ matrix.os }}
+          path: evidence/ci-*

@@ -1,0 +1,100 @@
+{
+  "started_at": "2026-09-11T16:44:21.891115+00:00",
+  "finished_at": "2026-09-11T16:44:34.549284+00:00",
+  "revision": "43a4266fc30a131c9e2b49654a97a3fd59e41d94",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "dependencies": {
+    "numpy": "2.2.6",
+    "pandas": "2.2.3"
+  },
+  "seqkit": {
+    "version": "2.13.0",
+    "url": "https://github.com/shenwei356/seqkit/releases/download/v2.13.0/seqkit_windows_amd64.exe.tar.gz",
+    "archive_sha256": "789a11df5306ae9d8cc0ccc9a11b76b6b8f44c31e6cc3ba3e4bc13db5819b1dd",
+    "digest_source": "GitHub release asset metadata, checked 2026-09-11",
+    "executable_sha256": "635c404be8e78cf3385b883f77266ecf2bde52b423ffd85dbee78c60960698cc"
+  },
+  "source_manifest_sha256": "2b4235a6aad3f05c93c0414c43d701f7e844a87c8ce76f2536b9530ac54235a1",
+  "project_files_sha256": {
+    "run_component.py": "ab444e76aaaedf43b0244bca9c57e8d926c502984b3c7127a09d350ca4079634",
+    "component_entry.py": "978592ed555d0cd7ad8528e8241bdbb99bbc441b6575960439105403fbd4c44e",
+    "fixtures/component/cases.json": "3cc0fa9225c248e77e2b454835fef939784957b707bd4d7ca79bc2ef18eb61a7",
+    "requirements-component.txt": "a21730e56e1170d97e0e4c32dd01aa26267cb608ce6209358e852e110d7cde24"
+  },
+  "results": [
+    {
+      "id": "C01",
+      "requirement": "COMP-01",
+      "status": "PASS",
+      "detail": "Exact categories/counts, expected percentages and sample identity confirmed"
+    },
+    {
+      "id": "C02",
+      "requirement": "COMP-02",
+      "status": "PASS",
+      "detail": "Exact categories/counts, expected percentages and sample identity confirmed"
+    },
+    {
+      "id": "C03",
+      "requirement": "COMP-03",
+      "status": "PASS",
+      "detail": "Exact categories/counts, expected percentages and sample identity confirmed"
+    },
+    {
+      "id": "C04",
+      "requirement": "COMP-01",
+      "status": "PASS",
+      "detail": "Exact categories/counts, expected percentages and sample identity confirmed"
+    },
+    {
+      "id": "C05",
+      "requirement": "COMP-04",
+      "status": "PASS",
+      "detail": "Exact categories/counts, expected percentages and sample identity confirmed"
+    },
+    {
+      "id": "C06",
+      "requirement": "COMP-05",
+      "status": "PASS",
+      "detail": "Exact categories/counts, expected percentages and sample identity confirmed"
+    },
+    {
+      "id": "C07",
+      "requirement": "COMP-06",
+      "status": "PASS",
+      "detail": "Expected input failure and specific diagnostic observed; no output emitted"
+    },
+    {
+      "id": "C08",
+      "requirement": "COMP-06",
+      "status": "PASS",
+      "detail": "Expected input failure and specific diagnostic observed; no output emitted"
+    },
+    {
+      "id": "X01",
+      "requirement": "EXP-01",
+      "status": "OBSERVATION",
+      "detail": "All reads unmapped: inspect whether an empty alignment table produces a useful result or diagnostic."
+    },
+    {
+      "id": "X02",
+      "requirement": "EXP-01",
+      "status": "OBSERVATION",
+      "detail": "Zero total input reads: inspect the diagnostic; no upstream invalid-input contract asserted."
+    },
+    {
+      "id": "X03",
+      "requirement": "EXP-02",
+      "status": "OBSERVATION",
+      "detail": "Total input count below unique mapped count: inspect whether impossible percentages are rejected."
+    },
+    {
+      "id": "X04",
+      "requirement": "EXP-03",
+      "status": "OBSERVATION",
+      "detail": "A mapped reference absent from the category metadata: inspect category coverage and denominator."
+    }
+  ],
+  "review_status": "PENDING_APPLICANT_REVIEW"
+}

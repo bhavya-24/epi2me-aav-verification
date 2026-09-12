@@ -1,0 +1,17 @@
+[17:44:30 - workflow_glue] Bootstrapping CLI.
+[17:44:30 - workflow_glue] Starting entrypoint.
+[31m[ERRO][0m GetFileAttributesEx <PROJECT_ROOT>\evidence\component-20260911-01\C08\inputs\missing.fasta: The system cannot find the file specified.
+Traceback (most recent call last):
+  File "<PROJECT_ROOT>\component_entry.py", line 9, in <module>
+    cli()
+  File "<PROJECT_ROOT>\upstream\bin\workflow_glue\__init__.py", line 95, in cli
+    args.func(args)
+  File "<PROJECT_ROOT>\upstream\bin\workflow_glue\contamination.py", line 44, in main
+    transgene_plasmid_name = subprocess.check_output(
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<LOCAL_USER_HOME>\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<LOCAL_USER_HOME>\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['seqkit', 'seq', '--name', '--only-id', '<PROJECT_ROOT>\\evidence\\component-20260911-01\\C08\\inputs\\missing.fasta']' returned non-zero exit status 4294967295.

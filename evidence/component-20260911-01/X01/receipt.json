@@ -1,0 +1,32 @@
+{
+  "argv": [
+    "<PROJECT_ROOT>\\.venv\\Scripts\\python.exe",
+    "-B",
+    "<PROJECT_ROOT>\\component_entry.py",
+    "contamination",
+    "--bam_info",
+    "<PROJECT_ROOT>\\evidence\\component-20260911-01\\X01\\inputs\\alignments.tsv",
+    "--sample_id",
+    "SYNTHETIC_A",
+    "--transgene_fasta",
+    "<PROJECT_ROOT>\\evidence\\component-20260911-01\\X01\\inputs\\transgene.fasta",
+    "--ref_ids",
+    "<PROJECT_ROOT>\\evidence\\component-20260911-01\\X01\\inputs\\reference_ids.json",
+    "--n_reads",
+    "10",
+    "--contam_class_counts",
+    "<PROJECT_ROOT>\\evidence\\component-20260911-01\\X01\\output.tsv"
+  ],
+  "input_sha256": {
+    "alignments.tsv": "2e2351eedd519a2a7e6beedbee0008c9aa0ad6e48d4912b4fdb3128a5cbc90bd",
+    "reference_ids.json": "2fb5afd3eb86795b3d4e8381b1b0e04e27c38af309e36bef71ebb1e3a8949646",
+    "transgene.fasta": "7f7f1e7dd88edfec6b41740c5413f420d4b4b08f38c4e115f8203088289c87bb"
+  },
+  "started_at": "2026-09-11T16:44:30.821466+00:00",
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "[17:44:30 - workflow_glue] Bootstrapping CLI.\n[17:44:31 - workflow_glue] Starting entrypoint.\nTraceback (most recent call last):\n  File \"<PROJECT_ROOT>\\component_entry.py\", line 9, in <module>\n    cli()\n  File \"<PROJECT_ROOT>\\upstream\\bin\\workflow_glue\\__init__.py\", line 95, in cli\n    args.func(args)\n  File \"<PROJECT_ROOT>\\upstream\\bin\\workflow_glue\\contamination.py\", line 80, in main\n    100 / len(df_bam) * df_contam_class['Number of alignments']).round(2).T\n    ~~~~^~~~~~~~~~~~~\nZeroDivisionError: division by zero\n",
+  "finished_at": "2026-09-11T16:44:31.735579+00:00",
+  "status": "OBSERVATION",
+  "detail": "All reads unmapped: inspect whether an empty alignment table produces a useful result or diagnostic."
+}

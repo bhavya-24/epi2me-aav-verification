@@ -1,0 +1,5 @@
+@HD	VN:1.6	SO:unsorted
+@SQ	SN:transgene	LN:100
+r1	0	transgene	1	60	8M	*	0	0	ACGTACGT	IIIIIIII
+r2	0	transgene	13	60	8M	*	0	0	ACGTTCGT	IIIIIIII
+r3	4	*	0	0	*	*	0	0	NNNN	IIII

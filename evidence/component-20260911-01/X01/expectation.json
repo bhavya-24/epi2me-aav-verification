@@ -1,0 +1,7 @@
+{
+  "id": "X01",
+  "recipe": "empty",
+  "n_reads": 10,
+  "requirement": "EXP-01",
+  "explore": "All reads unmapped: inspect whether an empty alignment table produces a useful result or diagnostic."
+}

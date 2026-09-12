@@ -1,0 +1,194 @@
+{
+  "finished_at": "2026-09-11T16:46:20.070339+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "scope": "Four-line Phred+33 FASTQ dialect accepted by this project; A/C/G/T/N bases only. Unit = one file, positive = malformed. Authored challenge cases, not a held-out population sample.",
+  "unit": "file; read_id is the shared metric API's case-ID column",
+  "source_sha256": {
+    "verify_aav.py": "f3507601ae8da57d6820c03201fff6fb0a2a17c3d9a110f482953608d915be48",
+    "run_validator_benchmark.py": "59032c625560cc3948f25aef5353aa4beab3b8a1a056da39cb75048f8792c92d",
+    "fixtures/validator/cases.json": "83649c36d03d89faea04ceb343ab9b7f56bb3fe6f3097b035bf6e8693e351a7a"
+  },
+  "metrics": {
+    "counts": {
+      "tp": 12,
+      "tn": 8,
+      "fp": 0,
+      "fn": 0,
+      "unclassified_positive": 0,
+      "unclassified_negative": 0
+    },
+    "n": 20,
+    "sensitivity_on_classified": 1.0,
+    "specificity_on_classified": 1.0,
+    "precision_on_classified": 1.0,
+    "classification_coverage": 1.0,
+    "positive_detection_rate_all": 1.0,
+    "negative_correct_rate_all": 1.0,
+    "truth_sha256": "780457108084e8394bc457c056889584dfa1aefd750e37a94c5e0b51de3f4b81",
+    "predictions_sha256": "780457108084e8394bc457c056889584dfa1aefd750e37a94c5e0b51de3f4b81",
+    "interpretation": "Conditional sensitivity/specificity exclude abstentions; read coverage and all-read rates alongside them. Null means undefined."
+  },
+  "cases": [
+    {
+      "id": "V01",
+      "truth": "negative",
+      "prediction": "negative",
+      "reason": "Ordinary record",
+      "detail": "Accepted 1 records",
+      "sha256": "d8f211fda9bf8a8d6e5c535f14569fe6b68f068bf02b56e708807e14707a172d"
+    },
+    {
+      "id": "V02",
+      "truth": "negative",
+      "prediction": "negative",
+      "reason": "Lowercase bases and N",
+      "detail": "Accepted 1 records",
+      "sha256": "a75d3667d6d4ea0f61725934379b41fa33b38d074a136f6779182130560b4dba"
+    },
+    {
+      "id": "V03",
+      "truth": "negative",
+      "prediction": "negative",
+      "reason": "Lowest allowed Phred+33 character",
+      "detail": "Accepted 1 records",
+      "sha256": "21692fd42fb15979bb7274e61b3aa261c40b43ce617545e2e85350d2da39ec3a"
+    },
+    {
+      "id": "V04",
+      "truth": "negative",
+      "prediction": "negative",
+      "reason": "Highest allowed Phred+33 character",
+      "detail": "Accepted 1 records",
+      "sha256": "c4cb7ccbfd7126c3845c1ddd8587b01c28406174961075ee3783a3bd5bebce9d"
+    },
+    {
+      "id": "V05",
+      "truth": "negative",
+      "prediction": "negative",
+      "reason": "Repeated matching identifier and description",
+      "detail": "Accepted 1 records",
+      "sha256": "d728b9c98fd7d6d03cf4781315ec88b25bbb3377088c1b1c682a31f786ab17a8"
+    },
+    {
+      "id": "V06",
+      "truth": "negative",
+      "prediction": "negative",
+      "reason": "Two distinct reads",
+      "detail": "Accepted 2 records",
+      "sha256": "2ef401cdf2ac404155bca0074d9138c2bea84647601bd9d23740ac96b30954b5"
+    },
+    {
+      "id": "V07",
+      "truth": "negative",
+      "prediction": "negative",
+      "reason": "CRLF line endings",
+      "detail": "Accepted 1 records",
+      "sha256": "6907996e09a9f62d459854e6a5957fd1a3f660714908fc4ac4ac20d7e221d47d"
+    },
+    {
+      "id": "V08",
+      "truth": "negative",
+      "prediction": "negative",
+      "reason": "Gzip-compressed record",
+      "detail": "Accepted 1 records",
+      "sha256": "654fb5501c09750b9a4f5b7fe2261e48995fe755be450d16b0f538b495d33139"
+    },
+    {
+      "id": "I01",
+      "truth": "positive",
+      "prediction": "positive",
+      "reason": "Header lacks @",
+      "detail": "FASTQ header must start with @ and contain a read ID",
+      "sha256": "a8135df0a9df6efa906be76125849ba9a00a1d1787c96f3a28f0e91b7ae2d5fd"
+    },
+    {
+      "id": "I02",
+      "truth": "positive",
+      "prediction": "positive",
+      "reason": "Empty identifier",
+      "detail": "FASTQ header must start with @ and contain a read ID",
+      "sha256": "4f692c425151dd4e1d8c1973b2652059e5e9e557945f42dcfd4aab2ad804430c"
+    },
+    {
+      "id": "I03",
+      "truth": "positive",
+      "prediction": "positive",
+      "reason": "Invalid q in sequence",
+      "detail": "Empty/unsupported sequence for a",
+      "sha256": "97198600e843e7f46c595fa1132e678020eba915dcccaad5d65e6bf54664ae77"
+    },
+    {
+      "id": "I04",
+      "truth": "positive",
+      "prediction": "positive",
+      "reason": "Missing plus marker",
+      "detail": "Truncated FASTQ or sequence/quality mismatch for a",
+      "sha256": "4f45975f62f4ea62800998a7eb8bacae261aa292ed9c821af19a19e5df9113f0"
+    },
+    {
+      "id": "I05",
+      "truth": "positive",
+      "prediction": "positive",
+      "reason": "Quality shorter than sequence",
+      "detail": "Truncated FASTQ or sequence/quality mismatch for a",
+      "sha256": "16c6814adcc48ba9440ff5e76c4a73c5e40e7de2f7e9c1ca7382b9cd1fffcf0b"
+    },
+    {
+      "id": "I06",
+      "truth": "positive",
+      "prediction": "positive",
+      "reason": "Quality longer than sequence",
+      "detail": "Truncated FASTQ or sequence/quality mismatch for a",
+      "sha256": "c2dc568a4a5521c81c513a0c2b0298268e9d89e38dbc36c67b892e56a1350ed5"
+    },
+    {
+      "id": "I07",
+      "truth": "positive",
+      "prediction": "positive",
+      "reason": "Truncated final record",
+      "detail": "Truncated FASTQ or sequence/quality mismatch for a",
+      "sha256": "ec460c03d73a2b1bc8d5748106b33ffbf24ffe7e023629d51accbb6b054a29d4"
+    },
+    {
+      "id": "I08",
+      "truth": "positive",
+      "prediction": "positive",
+      "reason": "Duplicate read identifier",
+      "detail": "Duplicate read ID: a",
+      "sha256": "ac826366ac39b411001a5acf31647b89ad264c594ea264022c1b503b179e926b"
+    },
+    {
+      "id": "I09",
+      "truth": "positive",
+      "prediction": "positive",
+      "reason": "Mismatched repeated identifier",
+      "detail": "Repeated identifier differs for a",
+      "sha256": "fb56e0656876a9b8215ab54b4b0ac92808c7c0ffc88dd1068be06551f9b03ad5"
+    },
+    {
+      "id": "I10",
+      "truth": "positive",
+      "prediction": "positive",
+      "reason": "Quality contains ASCII 32",
+      "detail": "Invalid Phred+33 character for a",
+      "sha256": "e22769757fc0f6076fe7e8bab779c0e04ee340425839ad5a2045cdd085fab460"
+    },
+    {
+      "id": "I11",
+      "truth": "positive",
+      "prediction": "positive",
+      "reason": "Quality contains ASCII 127",
+      "detail": "Invalid Phred+33 character for a",
+      "sha256": "3c18dbe4040b350214dfd277d5409b13a682b47635111c7f413359793d581ae6"
+    },
+    {
+      "id": "I12",
+      "truth": "positive",
+      "prediction": "positive",
+      "reason": "Empty file",
+      "detail": "No FASTQ reads",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "limitations": "Small authored challenge set, related to existing unit tests. Not independent external validation, EPI2ME workflow accuracy or clinical performance."
+}

@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="EPI2ME component contracts" tests="8" failures="0" skipped="0"><testcase name="C01" classname="COMP-01" /><testcase name="C02" classname="COMP-02" /><testcase name="C03" classname="COMP-03" /><testcase name="C04" classname="COMP-01" /><testcase name="C05" classname="COMP-04" /><testcase name="C06" classname="COMP-05" /><testcase name="C07" classname="COMP-06" /><testcase name="C08" classname="COMP-06" /></testsuite>

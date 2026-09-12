@@ -1,0 +1,7 @@
+{
+  "id": "X02",
+  "recipe": "baseline",
+  "n_reads": 0,
+  "requirement": "EXP-01",
+  "explore": "Zero total input reads: inspect the diagnostic; no upstream invalid-input contract asserted."
+}

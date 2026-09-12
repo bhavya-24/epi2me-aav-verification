@@ -1,0 +1,13 @@
+requirement,workflow_component,verification,evidence,risk
+REQ-01,Input preparation,IN-01,data/demo/manifest.json,RISK-01
+REQ-02,fastq_ingress,IN-02,preflight/report.json,RISK-02
+REQ-03,mask_transgene_reference; make_combined_reference,IN-03; IN-04,preflight/report.json,RISK-03
+REQ-04,Workflow orchestration,RUN-01,run.json; console.log; output/execution/trace.txt,RISK-04
+REQ-05,publish_output; report generation,OUT-01; OUT-02; OUT-04,verification/report.json,RISK-05
+REQ-06,aav_structures,OUT-03,verification/report.json,RISK-06
+REQ-07,map_to_combined_reference; aav_structures,BAM-00; BAM-01; BAM-02; BAM-03,verification/commands.json,RISK-05
+REQ-08,run_medaka,VCF-01; VCF-02,verification/commands.json,RISK-03
+REQ-09,contamination; aav_structures; run_medaka,MAN-01,docs/manual-review.md,RISK-07
+REQ-10,Independent benchmark evaluation,PERF-01,truth.csv; predictions.csv; metrics.json,RISK-07
+REQ-11,fastq_ingress,missing-input,negative-case console.log; docs/manual-review.md,RISK-02
+REQ-12,Parameter validation,unknown-parameter,negative-case console.log; docs/manual-review.md,RISK-04

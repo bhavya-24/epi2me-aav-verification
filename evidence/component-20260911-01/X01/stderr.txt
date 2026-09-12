@@ -1,0 +1,11 @@
+[17:44:30 - workflow_glue] Bootstrapping CLI.
+[17:44:31 - workflow_glue] Starting entrypoint.
+Traceback (most recent call last):
+  File "<PROJECT_ROOT>\component_entry.py", line 9, in <module>
+    cli()
+  File "<PROJECT_ROOT>\upstream\bin\workflow_glue\__init__.py", line 95, in cli
+    args.func(args)
+  File "<PROJECT_ROOT>\upstream\bin\workflow_glue\contamination.py", line 80, in main
+    100 / len(df_bam) * df_contam_class['Number of alignments']).round(2).T
+    ~~~~^~~~~~~~~~~~~
+ZeroDivisionError: division by zero

@@ -1,0 +1,7 @@
+{
+  "id": "X04",
+  "recipe": "unknown_reference",
+  "n_reads": 101,
+  "requirement": "EXP-03",
+  "explore": "A mapped reference absent from the category metadata: inspect category coverage and denominator."
+}

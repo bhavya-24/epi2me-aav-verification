@@ -1,0 +1,8 @@
+risk,failure,possible_consequence,proposed_control,verification,residual_limitation
+RISK-01,Changed input or source,Results cannot be reproduced,Pin revision and input hashes,IN-01; RUN-01,Container tags are not registry digest pins; downloaded SIF hashes are retained
+RISK-02,Truncated reads or missing input,Analysis fails or omits data,Input validation plus negative test,IN-02; REQ-11,Four-line FASTQ dialect only
+RISK-03,Wrong reference or coordinates,Misleading variant or coverage results,Reference provenance and allele checks,IN-03; IN-04; VCF-02,An internally consistent wrong reference needs independent biological review
+RISK-04,Untracked settings or unsupported parameter,Unexpected workflow behaviour,Run receipt and parameter rejection case,RUN-01; REQ-12,Runtime compatibility remains subject to actual HPC execution
+RISK-05,Partial or corrupt output,Misleading report of success,Required-output and external-tool checks,OUT-01; OUT-02; BAM-01; BAM-02; VCF-01,Structural checks do not establish biological correctness
+RISK-06,Sample mix-up,Results attributed to wrong specimen,Per-sample manifest and output membership,OUT-03,Demo samples reuse IDs so this control alone cannot detect their swap
+RISK-07,Incorrect metric denominator,Inflated performance estimate,Complete truth join and explicit abstentions,PERF-01,Accuracy on synthetic controls will not establish clinical performance
