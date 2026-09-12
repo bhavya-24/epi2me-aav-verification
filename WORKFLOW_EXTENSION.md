@@ -18,7 +18,7 @@ their real-tool exercise is prepared with an alternative Eddie installer.
 
 ## Original end-to-end workflow extension
 
-A focused portfolio project for testing an actual bioinformatics workflow:
+An end-to-end verification extension for the bioinformatics workflow
 Oxford Nanopore's `wf-aav-qc` v1.3.1, pinned to commit
 `43a4266fc30a131c9e2b49654a97a3fd59e41d94`.
 
@@ -30,8 +30,8 @@ claims have been established.**
 The workflow performs AAV preparation QC. This project contributes input
 validation, output verification, controlled failure tests, traceability and a
 reviewable evidence package. The official demo contains simulated reads, not
-patient samples. Initial code and document scaffolding were prepared with
-Codex assistance; review, execute and explain them before presenting the work.
+patient samples. Development attribution is recorded in NOTICE.md. Technical review and
+full-workflow execution remain pending.
 
 **Real finding:** the original demo has one non-nucleotide `q` in sample_1.
 The failed input-check report is preserved. A documented derived baseline
@@ -107,7 +107,7 @@ the generated report unchanged and add your signed/date-stamped review beside
 it. No signatures, reviews, defects or successful runs are prefilled.
 
 The full test design is in [docs/test-plan.md](docs/test-plan.md). The
-[skills map](docs/skills-map.md) identifies both coverage and remaining gaps.
+[project scope](docs/project-scope.md) identifies coverage and remaining gaps.
 
 ## Local checks (no HPC or paid services)
 
@@ -154,17 +154,17 @@ structure table as if it contained every contaminant read. Do not infer truth
 from the same workflow being evaluated. The optional controlled dataset and
 its biological benchmark are not supplied or executed in this first version.
 
-## Evidence to publish after review
+## Evidence retention
 
-- Your README explanation and requirement-to-test example.
+- Technical overview and requirement-to-test links.
 - Actual baseline report and command evidence, with HPC usernames/paths
   redacted in the public copy where needed.
 - One genuinely investigated observation or defect; an intentional failure
   must be labelled a controlled test.
-- Your manual biological interpretation and limitations.
+- Manual biological interpretation and limitations.
 - Small tests and source code. Do not upload the whole work directory, caches,
-  raw datasets or unrelated application documents. Upload this folder as its
-  own repository if you choose to publish; it is not yet published.
+  raw datasets or unrelated private documents. Keep new execution results in
+  separately dated directories and retain their original status.
 
 ## Sources and attribution
 

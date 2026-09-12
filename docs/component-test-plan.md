@@ -6,7 +6,7 @@ commit `43a4266fc30a131c9e2b49654a97a3fd59e41d94`.
 This plan describes a component contract inferred from the pinned source and
 workflow documentation, not requirements supplied or approved by Oxford Nanopore.
 Numeric expectations were recorded in `fixtures/component/cases.json` before
-execution. Applicant review of these expectations remains pending.
+execution. Independent review of these expectations remains pending.
 
 ## Architecture and scope
 
@@ -102,4 +102,5 @@ quickcheck alone does not establish all internal records are uncorrupted.
 Run receipts are local provenance, not signed attestations. New runs require new
 directories, preserving original results. Preserve environment errors, unusual
 outputs and failed evidence. Review every non-pass and at least C01/C02/X03
-before publishing a case study. CI is prepared but not executed remotely.
+before accepting the report. Dated local evidence predates CI; inspect the
+current Actions runs for subsequent platform results.

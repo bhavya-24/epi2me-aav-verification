@@ -46,9 +46,9 @@ table/zero total reads. X04 includes an unlisted reference in the denominator
 without emitting a corresponding named category. Those require separate
 contract and reachability review; they are not automatically critical bugs.
 
-## Interview explanation
+## Technical review
 
 Explain the input inconsistency, reproduce the exact values, trace the
 calculation, distinguish exit-code success from output correctness, and state
 what evidence is still needed before classifying this as a workflow defect.
-Applicant review and an independent peer review are pending.
+Independent technical review is pending.

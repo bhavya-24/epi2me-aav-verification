@@ -1,24 +1,21 @@
-# Attribution and scope
+# Attribution
 
-This is an independent portfolio project testing selected behaviour of EPI2ME
-`wf-aav-qc`. It is not an Oxford Nanopore product or an endorsed validation.
+This is an independent verification project for selected behaviour of EPI2ME
+`wf-aav-qc`. It is not an Oxford Nanopore product or endorsed validation.
 
-Oxford Nanopore authored the source files in `upstream/`. These files are
-preserved unchanged from commit `43a4266fc30a131c9e2b49654a97a3fd59e41d94`, with
-their original notices and the [Oxford Nanopore Technologies PLC Public License
-Version 1.0](upstream/LICENSE). That licence governs the included upstream code;
-it must not be replaced by a blanket licence for this repository. Source hashes
-and the repository URL are in [upstream/SOURCE.json](upstream/SOURCE.json).
+Oxford Nanopore authored the files in `upstream/`. They are preserved unchanged
+from commit `43a4266fc30a131c9e2b49654a97a3fd59e41d94`, with their original notices
+and [Oxford Nanopore Technologies PLC Public License Version 1.0](upstream/LICENSE).
+The licence governs the included upstream code. Source hashes and repository
+details are in [upstream/SOURCE.json](upstream/SOURCE.json).
 
-The local verification harness, fixtures, reports and documentation are the
-portfolio work. Codex assisted with their preparation and with local execution.
-The applicant's reproduction and interpretation remain pending in this snapshot.
-The upstream algorithm is not claimed as locally authored work.
+This repository supplies the verification harness, fixtures, test plans,
+investigations and reports. Codex assisted with code, documentation and local
+execution. The upstream algorithm is not claimed as original project code.
 
-SeqKit and Python dependencies are installed separately; their binaries are not
-included in the GitHub package. Download receipts and dependency versions are
-retained with the evidence. Large datasets, runtime caches and environments are
-excluded.
+SeqKit and Python dependencies are installed separately. Their binaries,
+large datasets, caches and virtual environments are excluded from the repository.
+Versions and download receipts are retained with execution evidence.
 
-The regulatory and risk documents are educational work samples. They do not
-claim certification, a compliant QMS, or an approved clinical application.
+Risk notes describe technical failure modes and proposed controls; they do not
+establish a certified quality system or an approved clinical application.

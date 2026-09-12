@@ -11,7 +11,7 @@
 | EPI2ME execution on Eddie | NOT_RUN | Requires upload, actual account modules and batch execution |
 | samtools / bcftools output checks | NOT_RUN | Require actual workflow outputs |
 | Negative workflow cases | NOT_RUN | Require execution and diagnostic review |
-| Biological interpretation | NOT_RUN | Applicant must inspect the results |
+| Biological interpretation | NOT_RUN | Independent inspection of results pending |
 | Clinical or accuracy validation | NOT_RUN | No independent workflow benchmark completed |
 
 Python runtime used for local checks: 3.12.14. Baseline read counts are 10,439

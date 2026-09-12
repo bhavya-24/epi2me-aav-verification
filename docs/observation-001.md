@@ -49,7 +49,7 @@ It is an analysis-preparation decision, not a repair of Oxford Nanopore's
 software. Do not submit an upstream defect allegation without investigating
 whether this malformed record was intentionally included as a test fixture.
 
-## Interview value
+## Review considerations
 
 Explain the independent input check, the observation, why the original was
 preserved, why no replacement base was guessed, how the derivation is tracked,

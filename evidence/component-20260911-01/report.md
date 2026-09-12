@@ -21,4 +21,4 @@ Contract checks are assessed against declared expectations. Exploratory probes r
 
 Each case contains its inputs, declared expectations, receipt, stdout/stderr and any component output.
 
-Review status: applicant review pending. These results are component verification in the recorded environment, not clinical accuracy or regulatory approval.
+Review status: technical review pending. These results are component verification in the recorded environment, not clinical accuracy or regulatory approval.

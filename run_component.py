@@ -102,7 +102,7 @@ def write_summary(directory, results):
         detail = row["detail"].replace("|", "\\|").replace("\n", " ")
         lines.append(f"| [{row['id']}]({row['id']}/receipt.json) | {row['requirement']} | {row['status']} | {detail} |")
     lines += ["", "Each case contains its inputs, declared expectations, receipt, stdout/stderr and any component output.",
-              "", "Review status: applicant review pending. These results are component verification in the recorded environment, not clinical accuracy or regulatory approval."]
+              "", "Review status: technical review pending. These results are component verification in the recorded environment, not clinical accuracy or regulatory approval."]
     (directory / "report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     contracts = [r for r in results if r["status"] != "OBSERVATION"]
     suite = ET.Element("testsuite", name="EPI2ME component contracts", tests=str(len(contracts)),
@@ -178,7 +178,7 @@ def main():
         save_json(directory / "run.json", run)
         print(spec["id"], status, detail)
     run["finished_at"] = datetime.now(timezone.utc).isoformat()
-    run["review_status"] = "PENDING_APPLICANT_REVIEW"
+    run["review_status"] = "PENDING_TECHNICAL_REVIEW"
     save_json(directory / "run.json", run)
     write_summary(directory, run["results"])
     return 1 if any(r["status"] == "FAIL" for r in run["results"]) else (2 if any(r["status"] == "BLOCKED" for r in run["results"]) else 0)

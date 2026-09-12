@@ -39,9 +39,8 @@ as successful detection of a malformed input.
 - Regression test and observed result:
 - Review status:
 
-## Interview demonstration
+## Reproduction walkthrough
 
-Explain the workflow question, show one requirement-to-test link, reproduce one
-check, explain a real observation and one limitation, then distinguish your
-verification code from the upstream workflow. Review every AI-assisted part
-you choose to publish; the initial scaffold was prepared with Codex assistance.
+Identify the workflow question, follow one requirement-to-test link, reproduce
+the check, and explain the observation and its limits. Distinguish behaviour
+of the verification harness from behaviour of the upstream component.

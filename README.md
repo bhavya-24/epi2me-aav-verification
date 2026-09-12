@@ -1,114 +1,103 @@
-# EPI2ME AAV QC component verification
+# EPI2ME AAV QC verification
 
-A bioinformatics software-testing portfolio examining counts, percentages and
-failure handling in the real EPI2ME `wf-aav-qc` contamination-summary component.
-Small synthetic inputs make every expected result inspectable by hand.
+Automated verification of the EPI2ME `wf-aav-qc` contamination-summary component,
+with controlled fixtures, requirement-to-test traceability and reproducible
+boundary-case investigations.
 
-**Recorded on 11 September 2026: 8 component contract checks passed, 4 exploratory
-observations recorded, and 28 verification-harness unit tests passed.**
-The complete Nextflow workflow has not run successfully in this project.
+[![Harness tests](https://github.com/bhavya-24/epi2me-aav-verification/actions/workflows/tests.yml/badge.svg)](https://github.com/bhavya-24/epi2me-aav-verification/actions/workflows/tests.yml)
+[![Component verification](https://github.com/bhavya-24/epi2me-aav-verification/actions/workflows/component.yml/badge.svg)](https://github.com/bhavya-24/epi2me-aav-verification/actions/workflows/component.yml)
 
-## Start with the evidence
+## Overview
 
-| Read | What it shows |
-|---|---|
-| [Two-page case study](output/pdf/epi2me-component-case-study.pdf) · [Markdown version](docs/component-case-study.md) | Problem, method, measured results and limitations; draft for applicant review |
-| [Component test report](evidence/component-20260911-01/report.md) | All 8 contract checks and 4 observations, linked to execution receipts |
-| [Requirements and test plan](docs/component-test-plan.md) | Requirements → software component → acceptance criteria → test evidence |
-| [OBS-002 investigation](docs/observation-002.md) | A successful component exit with a negative unmapped-read count |
-| [Job-skills map](docs/skills-map.md) | Evidence for the target role and remaining gaps |
-| [Reproduction guide](LOCAL_START.md) | Setup and commands for Windows and Linux |
-
-## What was tested
-
-The target is Oxford Nanopore's unmodified `wf-aav-qc` v1.3.1 source at commit
+The suite invokes Oxford Nanopore's unmodified contamination CLI with real
+NumPy, pandas and native SeqKit. Small alignment tables make the expected
+counts and percentages independently inspectable. The upstream source is
+pinned to `wf-aav-qc` v1.3.1, commit
 [`43a4266fc30a131c9e2b49654a97a3fd59e41d94`](https://github.com/epi2me-labs/wf-aav-qc/tree/43a4266fc30a131c9e2b49654a97a3fd59e41d94).
-The harness invokes its CLI with real NumPy, pandas and native SeqKit. Source
-hashes, input hashes, expectations, outputs and diagnostics are retained.
 
 ```mermaid
 flowchart LR
-    A[Authored alignment tables and metadata] --> B[Pinned EPI2ME contamination CLI]
+    A[Alignment summaries and metadata] --> B[Pinned EPI2ME contamination CLI]
     F[Reference FASTA] --> S[Native SeqKit]
     S --> B
-    B --> C[Output TSV and exit diagnostics]
+    B --> C[Output TSV and diagnostics]
     E[Declared expectations] --> D[Verification harness]
     C --> D
-    D --> R[JSON, JUnit and Markdown evidence]
+    D --> R[JSON, JUnit and Markdown reports]
 ```
 
-The component boundary is downstream of alignment. Alignment, assembly,
-variant calling and the complete EPI2ME report are outside this executed scope.
-Acceptance criteria are inferred from source and project properties; they are
-not employer-approved product requirements.
+## Documentation
 
-## Results and interpretation
+| Document | Contents |
+|---|---|
+| [Project scope](docs/project-scope.md) | Architecture, verification layers and boundaries |
+| [Test plan](docs/component-test-plan.md) | Requirements, acceptance criteria and traceability |
+| [Verification report](docs/component-case-study.md) · [PDF](output/pdf/epi2me-component-case-study.pdf) | Method, results and interpretation |
+| [Component execution report](evidence/component-20260911-01/report.md) | Per-case receipts, inputs, outputs and diagnostics |
+| [OBS-002](docs/observation-002.md) | Inconsistent total-read metadata and impossible percentages |
+| [Risk review](docs/component-risk-review.md) | Failure modes, proposed controls and review status |
+| [Setup and reproduction](LOCAL_START.md) | Windows and Linux commands |
 
-| Activity | Recorded outcome | Evidence |
-|---|---|---|
-| Component contracts C01–C08 | 8 PASS | [Report](evidence/component-20260911-01/report.md) |
-| Exploratory probes X01–X04 | 4 OBSERVATION; separate from pass/fail contracts | [Investigation](docs/observation-002.md) |
-| Harness unit tests | 28 PASS | [Test log](evidence/component-harness-tests-20260911.txt) |
-| FASTQ validator challenge | 12 true positives, 8 true negatives, 0 false positives/negatives | [Benchmark](evidence/validator-20260911-01/report.md) |
-| samtools/bcftools exercise | BLOCKED locally: tools unavailable | [Recorded status](evidence/file-tools-local-20260911-01/report.md) |
-| Complete Nextflow workflow on Eddie | NOT_RUN; container preparation ran out of memory | [Environment record](evidence/eddie-environment.md) |
-| GitHub Actions | Configuration prepared; no remote result recorded in this snapshot | [Workflow](.github/workflows/component.yml) |
+## Recorded results
 
-**Why C02 matters:** repeating an alignment increases the table from 95 to 96
-rows, but leaves 95 distinct mapped reads. Transgene alignment share changes
-from 80/95 (84.21%) to 81/96 (84.38%); mapped-read percentage stays at 95%.
-This tests whether different denominators are interpreted correctly.
-[Inspect the expected values](evidence/component-20260911-01/C02/expectation.json)
-and [actual output](evidence/component-20260911-01/C02/output.tsv).
+The committed local evidence was generated on 11 September 2026:
 
-**Why X03 matters:** supplying a total of 94 reads alongside 95 distinct mapped
-reads produced an exit code of 0, **−1 unmapped read and 101.0638% mapped**.
-This is reproduced component behaviour under deliberately inconsistent metadata.
-Whether the complete workflow can produce those inputs remains unverified.
-[Inspect the receipt](evidence/component-20260911-01/X03/receipt.json)
-and [actual output](evidence/component-20260911-01/X03/output.tsv).
+| Check | Outcome |
+|---|---|
+| Component contracts C01–C08 | 8 PASS |
+| Exploratory probes X01–X04 | 4 observations, assessed separately from contracts |
+| Harness unit tests | 28 PASS |
+| FASTQ validator challenge | 12 true positives, 8 true negatives, 0 false positives/negatives |
+| Local samtools/bcftools exercise | BLOCKED: executables unavailable |
+| Complete Nextflow workflow on Eddie | NOT_RUN: container preparation ran out of memory |
 
-The FASTQ benchmark classifies 20 authored files under this project's restricted
-four-line A/C/G/T/N, Phred+33 dialect. Positive means a malformed file. Its
-12/12 sensitivity and 8/8 specificity describe these fixtures only; this is not
-an independent held-out benchmark or a measurement of EPI2ME/clinical accuracy.
+The badges above report current CI status. Dated local reports describe their
+recorded environments; later CI runs have separate logs and artifacts. The
+first Linux CI run passed the component checks but failed during file-tool
+verification; the failure remains open for investigation.
 
-## Reproduce and review
+**C02 — read counts and alignment counts:** adding a repeated alignment changes
+95 rows to 96 while the number of distinct mapped reads stays at 95. Transgene
+alignment share changes from 80/95 (84.21%) to 81/96 (84.38%); the mapped-read
+percentage stays at 95%.
+[Expectation](evidence/component-20260911-01/C02/expectation.json) ·
+[Output](evidence/component-20260911-01/C02/output.tsv)
 
-Use Python 3.12 on Windows or Linux x86-64. [LOCAL_START.md](LOCAL_START.md)
-contains isolated-environment setup, checksum-verified SeqKit installation,
-commands to reproduce C02/X03, and the full suite. No container or HPC allocation
-is required for the component tests.
+**X03 — inconsistent metadata:** 95 distinct mapped reads with a declared total
+of 94 produced a successful exit, −1 unmapped read and 101.0638% mapped.
+The observation is reproducible at the component boundary. Whether upstream
+workflow processing can supply these inputs remains unverified.
+[Receipt](evidence/component-20260911-01/X03/receipt.json) ·
+[Output](evidence/component-20260911-01/X03/output.tsv)
 
-Every run uses a new evidence directory. For each case, compare the inputs and
-declared expectation with the actual output and diagnostic. Record your review
-separately rather than changing generated results. The
-[risk-review document](docs/component-risk-review.md) includes an unfilled review
-record. Applicant and peer review remain pending in this snapshot.
+## Run the checks
 
-The [Eddie workflow extension](WORKFLOW_EXTENSION.md) and container-free
-samtools/bcftools installer are additional prepared work, with execution still
-pending. The original demo's input anomaly is documented separately in
-[OBS-001](docs/observation-001.md).
+Use Python 3.12 on Windows or Linux x86-64. Follow
+[LOCAL_START.md](LOCAL_START.md) to create an isolated environment, install the
+pinned dependencies and checksum-verified SeqKit, then run the suite. Component
+tests do not require containers, an HPC allocation or the full demo dataset.
 
-## Contribution, provenance and limits
+Each execution creates a new evidence directory with declared expectations,
+inputs, commands, exit codes, diagnostics and hashes. Record technical review
+separately from generated results. Independent review remains pending.
 
-The portfolio contribution is the verification harness, controlled fixtures,
-test plan, traceability, investigation and evidence presentation. Oxford
-Nanopore authored the tested component. Codex assisted with code, documentation
-and local execution; personal reproduction and interpretation are still needed
-before presenting these as independently mastered skills.
+## Scope and provenance
 
-Files under `upstream/` retain their original notices and the
-[Oxford Nanopore licence](upstream/LICENSE); provenance is recorded in
-[SOURCE.json](upstream/SOURCE.json). See [NOTICE.md](NOTICE.md) for attribution.
+The executed component suite begins downstream of alignment. It does not run
+assembly, variant calling or the complete Nextflow workflow. The
+[Eddie workflow extension](WORKFLOW_EXTENSION.md) is prepared but remains
+unexecuted. [OBS-001](docs/observation-001.md) documents a separate input anomaly
+in the original simulated-read dataset.
 
-The GitHub export replaces personal path prefixes in copied logs and documents;
-its `PUBLIC_EXPORT.md` and `PUBLIC_EXPORT_MANIFEST.json` explain the changes.
-Numeric results, timestamps, input/output hashes and upstream source bytes are
-preserved. The original local evidence is retained separately.
+The FASTQ benchmark covers 20 authored files in a restricted four-line
+A/C/G/T/N, Phred+33 dialect. Positive means a malformed file. Its 12/12
+sensitivity and 8/8 specificity describe those fixtures, not independent
+population-level or clinical accuracy. Acceptance criteria derive from source
+inspection and project properties, not an approved upstream specification.
 
-Risk and document-control materials are learning exercises. This work does not
-establish SaMD compliance, a clinical validation, professional QMS experience,
-or proficiency in Jira, Jama, MasterControl or Monday.com. No upstream fix or
-issue submission is claimed.
+Source/input/output hashes and anonymisation details are documented in
+[PUBLIC_EXPORT.md](PUBLIC_EXPORT.md) and the accompanying manifest. Upstream
+code retains its [original licence](upstream/LICENSE) and
+[source manifest](upstream/SOURCE.json). See [NOTICE.md](NOTICE.md) for attribution
+and development assistance. This project has no clinical validation or medical
+device certification.

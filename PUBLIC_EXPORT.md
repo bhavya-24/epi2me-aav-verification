@@ -1,29 +1,34 @@
-# Public evidence copy
+# Evidence provenance
 
-Prepared 2026-09-12 from the local project; no GitHub publication is implied.
+The local component evidence was generated on 2026-09-11. This distributed
+copy uses anonymised path prefixes: `<PROJECT_ROOT>` for the project location,
+`<LOCAL_USER_HOME>` for the Windows home directory and, where needed,
+`<HPC_USER>` for the HPC account identifier. The original private evidence is
+retained unchanged. The initial path substitutions affected 24 copied files.
 
-The original execution evidence is retained unchanged in the private working
-project. This copy replaces the workstation's project-directory prefix with
-`<PROJECT_ROOT>`, the Windows home prefix with `<LOCAL_USER_HOME>` and, if
-present, the HPC account identifier with `<HPC_USER>`.
-Both plain-text and JSON-escaped paths are handled. There are 24
-changed files. The replacement map deliberately omits the private values.
+Documentation was revised on 2026-09-12. Review labels in the historical summary
+and run metadata now use neutral technical-review terminology. Review remains
+pending; no execution date, test assessment, numeric result, input/output hash
+or upstream source byte was changed. The technical report was regenerated.
 
-Numeric results, exit codes, timestamps, diagnostics apart from their path
-prefixes, and source/input/output hash fields are unchanged. The included
-upstream source and licence bytes are unchanged. Public receipts are redacted
-copies, not byte-identical originals or signed attestations. Their command
-paths are provenance placeholders; use LOCAL_START.md to reproduce the runs.
+The historical run's `project_files_sha256` identifies the code used for that
+run at repository revision `428d22b8ee46b8064e61a2e9814728b927711392`.
+Subsequent changes to report wording and the deliberate unknown-parameter name
+are recorded in Git. Historical code hashes are not rewritten to match newer
+files. New executions record the code hashes they actually use.
 
-PUBLIC_EXPORT_MANIFEST.json lists original and public SHA256 values and the
-replacement count for each copied file. It records additional generated files
-separately and excludes itself from its own hashes. .gitattributes disables
-Git line-ending conversion to preserve the bytes checked by these manifests.
+`PUBLIC_EXPORT_MANIFEST.json` inventories the current distributed files,
+records their SHA256 values and retains original local hashes where available.
+It identifies files revised since the initial distribution and excludes itself
+from its own hashes. Original hashes do not mean the current file is identical
+to its original; compare `original_sha256` with `public_sha256`.
+`.gitattributes` disables Git line-ending conversion to preserve hashed bytes.
 
-Large data, caches, virtual environments, work directories, personal machine
-setup files and unrelated application documents are excluded. The runnable
-synthetic fixtures, test evidence, documentation and case study are included.
+Copied receipts are local provenance records, not signed attestations. Their
+anonymised command paths are placeholders; use LOCAL_START.md to reproduce a
+run. Large data, caches, virtual environments, work directories and private
+machine settings are excluded from version control.
 
-The original run is dated 2026-09-11. CI, the full Nextflow workflow, external
-file tools and applicant/peer review remain pending as described in README.md.
-Future runs must retain their own dates and statuses.
+Dated local reports retain the status of the recorded environment. Later
+GitHub Actions runs have their own commit IDs, logs and artifacts. Independent
+technical review and the complete Nextflow workflow remain pending.

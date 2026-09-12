@@ -3,9 +3,9 @@
 Status: design prepared; HPC execution and manual review pending.
 
 Purpose: evaluate selected observable behaviours of upstream wf-aav-qc v1.3.1
-on the pinned public simulated demo. The harness is the portfolio contribution.
+on the pinned public simulated demo. The harness implements the local verification checks.
 Oxford Nanopore authored the workflow. This is not a medical device or a
-regulatory submission. Standards-related documents are learning exercises.
+regulatory submission. Standards references provide context for the technical risk notes.
 
 The sample set is sample_1 and sample_2, each with 10,440 simulated reads in the
 reviewed archive. The read identifiers are reused across the two samples;
@@ -54,7 +54,7 @@ of all input reads and cannot alone provide contamination sensitivity or
 specificity. No accuracy threshold is asserted for this unvalidated demo.
 Zero variants in a VCF is not automatically a failure. No attempt is made to
 prove clinical validity, large-cohort performance, de novo assembly accuracy,
-ISO compliance, or hands-on Jama/MasterControl experience.
+or ISO compliance.
 
 The upstream output definition is conditional: the combined BAM is expected
 under this project's default output_genometype_bams=false. Optional per-type

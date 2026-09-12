@@ -1,6 +1,7 @@
 # EPI2ME AAV QC component verification
 
-Draft for applicant review. Prepared 2026-09-11 with Codex assistance.
+Technical report. Execution date: 2026-09-11; documentation revised 2026-09-12.
+Independent technical review pending. Development attribution is in NOTICE.md.
 
 ## Problem and purpose
 
@@ -78,12 +79,12 @@ document-control learning exercise, source and input hashes, machine-readable
 results and a proposed investigation follow-up. Real samtools/bcftools exercises
 are prepared but locally BLOCKED; neither tool is available in the current
 Windows PATH. A project-local Linux installer is provided for Eddie because
-the user's module search found neither tool.
+the recorded module search found neither tool.
 
-No full Nextflow workflow, external CI run, aligner/variant-caller benchmark,
-clinical validation or regulatory approval has been completed. Professional
-SaMD experience and named commercial-tool proficiency are not inferred from
-these documents. Applicant and peer review remain pending.
+The local results do not include a full Nextflow workflow, aligner/variant-caller
+benchmark or clinical validation. Subsequent CI runs have separate logs and
+artifacts; the first Linux run passed component checks but failed file-tool
+verification. Independent technical review remains pending.
 
 ## Evidence navigation
 

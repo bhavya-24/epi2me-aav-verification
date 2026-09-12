@@ -51,12 +51,12 @@ def footer(canvas, doc):
     canvas.line(48, 41, A4[0] - 48, 41)
     canvas.setFont("Helvetica", 8)
     canvas.setFillColor(grey)
-    canvas.drawString(48, 28, "11 September 2026  |  Prepared with Codex assistance; applicant review pending")
+    canvas.drawString(48, 28, "Run: 11 September 2026  |  Report revised: 12 September 2026")
     canvas.drawRightString(A4[0] - 48, 28, f"{doc.page} / 2")
     canvas.restoreState()
 
 
-story = [p("BIOINFORMATICS SOFTWARE TESTING / PORTFOLIO WORK SAMPLE", "label"),
+story = [p("BIOINFORMATICS SOFTWARE VERIFICATION / TECHNICAL REPORT", "label"),
          p("EPI2ME AAV QC<br/>Component verification", "title"),
          p("Executed evidence, explicit assumptions and a reproducible metadata investigation.", "body"),
          table([["Contract checks", "Exploratory probes", "Harness unit tests"],
@@ -96,13 +96,13 @@ story = [p("BIOINFORMATICS SOFTWARE TESTING / PORTFOLIO WORK SAMPLE", "label"),
          Spacer(1, 8),
          p("Positive means one malformed FASTQ file under the project's four-line A/C/G/T/N, Phred+33 dialect. Twenty authored challenge files yielded sensitivity 12/12, specificity 8/8 and coverage 20/20. These examples are related to the unit-test design; they are not external validation or EPI2ME/clinical accuracy."),
          p("Traceability and remaining work", "sub"),
-         p("Requirements link to the Nextflow process, Python component, cases and saved results. A risk/document-control exercise records failure consequences, proposed controls and review status. samtools/bcftools exercises remain BLOCKED locally; a container-free Eddie installer is prepared. External CI, full workflow execution, applicant review and peer review remain pending."),
+         p("Requirements link to the Nextflow process, Python component, cases and saved results. Technical risk notes record failure consequences, proposed controls and review status. samtools/bcftools exercises remain BLOCKED locally; a container-free Eddie installer is prepared. Full workflow execution and independent review remain pending. Later CI runs have separate evidence; the first Linux run failed file-tool checks."),
          p("Evidence and attribution", "sub"),
-         p("Repository: evidence/component-20260911-01; evidence/validator-20260911-01; docs/component-test-plan.md; docs/observation-002.md; docs/component-risk-review.md. Upstream code is Oxford Nanopore's work, supplied unchanged with its licence. This portfolio does not establish SaMD compliance or commercial-tool experience.", "small"),
+         p("Repository: evidence/component-20260911-01; evidence/validator-20260911-01; docs/component-test-plan.md; docs/observation-002.md; docs/component-risk-review.md. Upstream code is Oxford Nanopore's work, supplied unchanged with its licence. Clinical validation and medical-device compliance are outside the demonstrated scope. Development assistance is documented in NOTICE.md.", "small"),
          p('<link href="https://github.com/epi2me-labs/wf-aav-qc/tree/43a4266fc30a131c9e2b49654a97a3fd59e41d94" color="#136E73">Source: Oxford Nanopore wf-aav-qc, pinned revision</link>', "small")]
 OUT.parent.mkdir(parents=True, exist_ok=True)
 doc = SimpleDocTemplate(str(OUT), pagesize=A4, leftMargin=48, rightMargin=48,
                         topMargin=43, bottomMargin=55, title="EPI2ME AAV QC component verification",
-                        author="Portfolio draft; prepared with Codex assistance")
+                        author="EPI2ME AAV QC verification project")
 doc.build(story, onFirstPage=footer, onLaterPages=footer)
 print(OUT)

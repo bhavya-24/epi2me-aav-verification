@@ -77,7 +77,7 @@ separate dated review, using `docs/component-risk-review.md` as a starting point
 
 ## Optional: samtools/bcftools on Eddie
 
-This extension has not executed in the applicant's Eddie account. Neither tool
+This extension has not executed on Eddie. Neither tool
 was found in the local Windows PATH, and the Eddie module search showed no
 matching modules. The local report records BLOCKED.
 
@@ -116,9 +116,9 @@ are in [WORKFLOW_EXTENSION.md](WORKFLOW_EXTENSION.md).
 ## CI and public evidence
 
 GitHub Actions is configured for Windows and Linux component checks and Linux
-file-tool checks. The committed snapshot contains no remote CI result. After
-publishing, inspect the actual Actions run and its uploaded artifacts before
-claiming CI or file-tool success.
+file-tool checks. The dated local snapshot predates remote CI. Inspect the current Actions run
+and its uploaded artifacts for each platform; file-tool verification has an
+open failure from the first Linux CI run.
 
 New local logs contain local paths. Keep an unchanged original and remove
 personal path prefixes only in a clearly labelled public copy, recording both

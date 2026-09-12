@@ -52,7 +52,7 @@ def main():
     if args.case == 'missing-input':
         command[command.index('--fastq')+1] = str(run/'deliberately-absent.fastq')
     elif args.case == 'unknown-parameter':
-        command += ['--portfolio_deliberately_unknown_parameter', 'true']
+        command += ['--verification_deliberately_unknown_parameter', 'true']
     versions = {}
     for name, arguments in [('nextflow',['nextflow','-version']), ('singularity',['singularity','--version']),
                             ('python',[sys.executable,'--version'])]:
