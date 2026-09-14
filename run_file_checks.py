@@ -6,6 +6,7 @@ import os
 from pathlib import Path
 import shutil
 import subprocess
+import traceback
 from verify_aav import Check, ROOT, sha256, write_report
 
 
@@ -105,12 +106,26 @@ def main():
     (directory / "provenance.json").write_text(json.dumps(provenance, indent=2) + "\n", encoding="utf-8")
     for check in checks:
         print(check.id, check.status, check.detail)
-        if check.status != "PASS" and os.environ.get("GITHUB_ACTIONS") == "true":
-            # Workflow annotations keep non-passing checks visible on the run page.
-            message = check.detail.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
-            print(f"::error title={check.id} ({check.status})::{message}")
+        if check.status != "PASS":
+            annotate(f"{check.id} ({check.status})", check.detail)
     return status
 
 
+def annotate(title, message):
+    """Emit a GitHub Actions annotation so problems are visible on the run page."""
+    if os.environ.get("GITHUB_ACTIONS") == "true":
+        text = message.strip().replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+        print(f"::error title={title}::{text}", flush=True)
+
+
 if __name__ == "__main__":
-    raise SystemExit(main())
+    try:
+        exit_status = main()
+    except SystemExit as stop:
+        if not isinstance(stop.code, int):
+            annotate("run_file_checks.py stopped early", str(stop.code))
+        raise
+    except Exception:
+        annotate("run_file_checks.py crashed", traceback.format_exc())
+        raise
+    raise SystemExit(exit_status)
