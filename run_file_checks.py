@@ -2,6 +2,7 @@
 import argparse
 from datetime import datetime, timezone
 import json
+import os
 from pathlib import Path
 import shutil
 import subprocess
@@ -30,10 +31,15 @@ def run_check(checks, commands, directory, identifier, requirement, argv, expect
         commands.append({"id": identifier, "argv": argv, "cwd": str(directory), "exit_code": result.returncode,
                          "stdout": result.stdout, "stderr": result.stderr})
         if failure_diagnostic:
-            passed = result.returncode != 0 and failure_diagnostic.lower() in result.stderr.lower()
+            # Tools differ in which stream carries a diagnostic, so search both.
+            output = (result.stdout + result.stderr).lower()
+            passed = result.returncode != 0 and failure_diagnostic.lower() in output
         else:
             passed = result.returncode == 0 and (expected_text is None or result.stdout.strip() == expected_text)
-        checks.append(Check(identifier, requirement, "PASS" if passed else "FAIL", f"Exit {result.returncode}; see commands.json"))
+        detail = f"Exit {result.returncode}; see commands.json"
+        if not passed:
+            detail += f"; stdout: {result.stdout.strip()[:200]!r}; stderr: {result.stderr.strip()[:200]!r}"
+        checks.append(Check(identifier, requirement, "PASS" if passed else "FAIL", detail))
         return passed
     except (OSError, subprocess.TimeoutExpired) as error:
         checks.append(Check(identifier, requirement, "BLOCKED", str(error)))
@@ -99,6 +105,10 @@ def main():
     (directory / "provenance.json").write_text(json.dumps(provenance, indent=2) + "\n", encoding="utf-8")
     for check in checks:
         print(check.id, check.status, check.detail)
+        if check.status != "PASS" and os.environ.get("GITHUB_ACTIONS") == "true":
+            # Workflow annotations keep non-passing checks visible on the run page.
+            message = check.detail.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+            print(f"::error title={check.id} ({check.status})::{message}")
     return status
 
 
